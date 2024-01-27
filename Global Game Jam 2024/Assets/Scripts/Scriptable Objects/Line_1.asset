@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Line_1
   m_EditorClassIdentifier: 
   audio: {fileID: 0}
-  text: 
+  text: SKIBIDI BALLS
   startDelay: 0
   endDelay: 0
