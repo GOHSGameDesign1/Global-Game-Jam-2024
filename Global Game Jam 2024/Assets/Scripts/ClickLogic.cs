@@ -14,21 +14,22 @@ public class ClickLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Debug.Log("clicked");
-            Click();
-        }
+        if (Input.GetMouseButtonDown(0))       Click();
+
     }
 
     void Click()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit2D hit = Physics2D.Raycast(Camera.main.transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition));
+        RaycastHit2D hit = Physics2D.GetRayIntersection(ray);
         if (hit)
         {
+            if(hit.transform.TryGetComponent(out IClickable clickableObject))
+            {
+                clickableObject.OnClick();
+            }
+
             Debug.Log(hit.transform.name);
-            Debug.Log("hit");
         }
     }
 }
