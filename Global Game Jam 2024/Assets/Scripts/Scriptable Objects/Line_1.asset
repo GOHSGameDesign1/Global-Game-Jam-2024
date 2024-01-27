@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0c5636592864494fb455d70629108f4, type: 3}
   m_Name: Line_1
   m_EditorClassIdentifier: 
-  audio: {fileID: 0}
-  text: SKIBIDI BALLS
+  audio: {fileID: 8300000, guid: c5ef53cd27736d048b4b1dbdda342482, type: 3}
+  text: 'This is Mr. E.R. Bradshaw of Napier Court, Black Lion Road London SE5. He
+    can not be seen. '
   startDelay: 0
   endDelay: 0
