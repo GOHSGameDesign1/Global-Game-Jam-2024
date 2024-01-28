@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c0c5636592864494fb455d70629108f4, type: 3}
-  m_Name: Line_2
+  m_Name: Now I am going
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: 6dc2786c4e83ba7428fe388b84c24179, type: 3}
-  text: However we happen to know he is in the water barrel
-  playNext: 1
+  clip: {fileID: 8300000, guid: 9779b9f52d4d60446ad8a215354d49cf, type: 3}
+  text: 'Now I am going to ask him to stand up. Mr. Bradshaw will you stand up please '
+  playNext: 0
   startDelay: 0
   endDelay: 0

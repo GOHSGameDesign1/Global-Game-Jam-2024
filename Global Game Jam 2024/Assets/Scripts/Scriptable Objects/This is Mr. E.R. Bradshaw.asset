@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0c5636592864494fb455d70629108f4, type: 3}
+  m_Name: This is Mr. E.R. Bradshaw
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: c5ef53cd27736d048b4b1dbdda342482, type: 3}
+  text: 'This is Mr. E.R. Bradshaw of Napier Court, Black Lion Road London SE5. He
+    can not be seen. '
+  playNext: 1
+  startDelay: 0
+  endDelay: 0
