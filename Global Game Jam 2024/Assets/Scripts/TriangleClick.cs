@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class TriangleClick : MonoBehaviour, IClickable
 {
-    AudioSource source;
 
     private void Awake()
     {
-        source = GetComponent<AudioSource>();
+
     }
 
     public void OnClick()
     {
         if (ByteManager.Instance.isPlaying) return;
-        source.Play();
-        ByteManager.Instance.Invoke("Play", source.clip.length);
+        AudioManager.instance.PlaySound("GunShot");
+        if(AudioManager.instance.GetSound("GunShot") != null) ByteManager.Instance.Invoke("Play", AudioManager.instance.GetSound("GunShot").clip.length);
         Debug.Log("Clicked Triangle");
+        Destroy(gameObject);
     }
 }
