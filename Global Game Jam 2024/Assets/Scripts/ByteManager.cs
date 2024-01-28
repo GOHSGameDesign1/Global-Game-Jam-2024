@@ -7,17 +7,31 @@ public class ByteManager : MonoBehaviour
 {
     public TextMeshProUGUI tmp;
 
-    public SoundByte line; 
+    public AudioSource source; 
 
+    public SoundByte line;
+
+
+    private void Awake()
+    {
+        source.clip = line.clip; 
+    }
     // Start is called before the first frame update
     void Start()
     {
         tmp.text = line.text;
+        Play();
     }
 
-    // Update is called once per frame
-    void Update()
+    void Play()
     {
-        
+        ToggleText();
+        Invoke("ToggleText", source.clip.length); // Disables subtitles once audio clip ends
+        source.Play();
+    }
+
+    void ToggleText()
+    {
+        tmp.gameObject.SetActive(!tmp.gameObject.activeSelf);
     }
 }
