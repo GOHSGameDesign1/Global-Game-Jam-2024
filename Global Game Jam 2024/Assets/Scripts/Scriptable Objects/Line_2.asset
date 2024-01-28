@@ -10,11 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c0c5636592864494fb455d70629108f4, type: 3}
-  m_Name: Line_1
+  m_Name: Line_2
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: c5ef53cd27736d048b4b1dbdda342482, type: 3}
-  text: 'This is Mr. E.R. Bradshaw of Napier Court, Black Lion Road London SE5. He
-    can not be seen. '
+  clip: {fileID: 8300000, guid: 6dc2786c4e83ba7428fe388b84c24179, type: 3}
+  text: However we happen to know he is in the water barrel
   playNext: 1
   startDelay: 0
   endDelay: 0
