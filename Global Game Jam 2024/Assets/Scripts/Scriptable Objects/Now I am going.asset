@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Now I am going
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 9779b9f52d4d60446ad8a215354d49cf, type: 3}
-  text: 'Now I am going to ask him to stand up. Mr. Bradshaw will you stand up please '
+  text: "Now I am going to ask him to stand up. \nMr. Bradshaw will you stand up
+    please "
   playNext: 0
   startDelay: 0
   endDelay: 0
