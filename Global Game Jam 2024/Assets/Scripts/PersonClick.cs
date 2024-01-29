@@ -4,24 +4,71 @@ using UnityEngine;
 
 public class PersonClick : MonoBehaviour, IClickable
 {
-    float smoothTime = 0.3f;
+    float smoothTime = 1f;
     Vector2 yVelocity = Vector2.zero;
 
-    private void Update()
-    {
-        if(ByteManager.Instance.index >= 2)
-         {
-               transform.localScale = new Vector2(1 ,1);
-             //transform.localScale = Vector2.SmoothDamp(transform.localScale, new Vector2(1, 1), ref yVelocity, smoothTime);
-         }
-    }
+    SpriteRenderer spriteRenderer;
+    public Sprite shotSprite;
 
+    private void Awake()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
     public void OnClick()
     {
         if (ByteManager.Instance.isPlaying) return;
         AudioManager.instance.PlaySound("GunShot");
         if (AudioManager.instance.GetSound("GunShot") != null) ByteManager.Instance.Invoke("Play", AudioManager.instance.GetSound("GunShot").clip.length);
         Debug.Log("Clicked Triangle");
+        spriteRenderer.sprite = shotSprite;
+        StartCoroutine(Compress());
+    }
+
+    void StretchUp()
+    {
+        Debug.Log("Stretching");
+        StartCoroutine(Stretch());
+    }
+
+    IEnumerator Stretch()
+    {
+        float time = 0;
+        float scaleModifier = 0;
+        while(time < smoothTime)
+        {
+            scaleModifier = Mathf.Lerp(0, 1, time / smoothTime);
+            transform.localScale = new Vector2(1, 1 * scaleModifier);
+
+            time += Time.deltaTime;
+            yield return null;
+        }
+        transform.localScale = Vector2.one;
+    }
+
+    IEnumerator Compress()
+    {
+        float time = 0;
+        float scaleModifier = 1;
+        yield return new WaitForSeconds(0.5f);
+        while (time < 0.2f)
+        {
+            scaleModifier = Mathf.Lerp(1, 0, time / 0.2f);
+            transform.localScale = new Vector2(1, 1 * scaleModifier);
+
+            time += Time.deltaTime;
+            yield return null;
+        }
+        transform.localScale = Vector2.right;
         Destroy(gameObject);
+    }
+
+    private void OnEnable()
+    {
+        ByteManager.manTrigger += StretchUp;
+    }
+
+    private void OnDisable()
+    {
+        ByteManager.manTrigger -= StretchUp;
     }
 }

@@ -19,6 +19,8 @@ public class ByteManager : MonoBehaviour
 
     public bool isPlaying { get; private set; }
 
+    public delegate void ManTrigger();
+    public static ManTrigger manTrigger;
 
     private void Awake()
     {
@@ -32,7 +34,7 @@ public class ByteManager : MonoBehaviour
         }
     }
 
-    public ByteManager GetInstance()
+    public static ByteManager GetInstance()
     {
         return Instance;
     }
@@ -45,36 +47,48 @@ public class ByteManager : MonoBehaviour
 
     public void Play()
     {
-        if (index >= lines.Length)
-        {
-            Invoke("ToggleIsPlaying", source.clip.length);
-            return;
-        }
+        if (index >= lines.Length) return;
+        StartCoroutine("PlayLine");
+    }
 
+    IEnumerator PlayLine()
+    {
         isPlaying = true;
         SoundByte currentLine = lines[index];
         source.clip = currentLine.clip;
         tmp.text = currentLine.text;
-        ToggleText();
-        Invoke("ToggleText", source.clip.length); // Disables subtitles once audio clip ends
+        tmp.gameObject.SetActive(true);
+
+        float time = 0; 
+        source.Play();
+        while(time < source.clip.length)
+        {
+            time += Time.deltaTime;
+            yield return null;
+        }
+
+        tmp.gameObject.SetActive(false);
+
+        if(index >= 1)
+        {
+            manTrigger?.Invoke();
+        }
+
+        index++;
+
         if (currentLine.playNext)
         {
-            Invoke("Play", source.clip.length);
-        } else
-        {
-            Invoke("ToggleIsPlaying", source.clip.length);
+            Play();
         }
-        source.Play();
-        index++;
+        else
+        {
+            isPlaying = false;
+        }
+
     }
 
     void ToggleText()
     {
         tmp.gameObject.SetActive(!tmp.gameObject.activeSelf);
-    }
-
-    void ToggleIsPlaying()
-    {
-        isPlaying = !isPlaying;
     }
 }
