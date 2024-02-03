@@ -63,8 +63,8 @@ public class PersonClick : MonoBehaviour, IClickable
         while (time < 0.2f)
         {
             float t = time / 0.2f;
-            t = Mathf.Sin(t * Mathf.PI * 0.5f);
-            transform.rotation = Quaternion.Euler(0, 0, Mathf.Lerp(0, -110, t));
+            // t = Mathf.Sin(t * Mathf.PI * 0.5f);
+            transform.rotation = Quaternion.Euler(0, 0, -110 * fallCurve.Evaluate(t));
 
             time += Time.deltaTime;
             yield return null;
