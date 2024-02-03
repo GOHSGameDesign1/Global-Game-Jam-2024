@@ -15,6 +15,7 @@ public class PersonClick : MonoBehaviour, IClickable
     [SerializeField] private AnimationCurve stretchCurveX;
     [SerializeField] private AnimationCurve fallCurve;
 
+    [SerializeField] private ParticleSystem shotVFX;
     [SerializeField] private ParticleSystem deathVFX;
 
     private void Awake()
@@ -29,6 +30,7 @@ public class PersonClick : MonoBehaviour, IClickable
         if (!canBeClicked) return;
         canBeClicked = false;
         AudioManager.instance.PlaySound("GunShot");
+        Instantiate(shotVFX, new Vector2(transform.position.x, transform.position.y + 1.2f), Quaternion.Euler(-90, 0 ,0 ));
         if (AudioManager.instance.GetSound("GunShot") != null) ByteManager.Instance.Invoke("Play", AudioManager.instance.GetSound("GunShot").clip.length);
         Debug.Log("Clicked Triangle");
         spriteRenderer.sprite = shotSprite;
@@ -73,7 +75,7 @@ public class PersonClick : MonoBehaviour, IClickable
         }
         transform.rotation = Quaternion.Euler(0, 0, -110);
 
-        yield return new WaitForSeconds(0.7f);
+        yield return new WaitForSeconds(1f);
         Destroy(gameObject);
     }
 
