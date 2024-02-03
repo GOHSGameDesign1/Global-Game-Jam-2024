@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class PersonClick : MonoBehaviour, IClickable
 {
-    float smoothTime = 1f;
-    Vector2 yVelocity = Vector2.zero;
+    public float smoothTime;
 
     SpriteRenderer spriteRenderer;
     public Sprite shotSprite;
 
     bool canBeClicked;
+
+    [SerializeField] private AnimationCurve stretchCurveY;
+    [SerializeField] private AnimationCurve stretchCurveX;
+    [SerializeField] private AnimationCurve fallCurve;
 
     private void Awake()
     {
@@ -40,13 +43,11 @@ public class PersonClick : MonoBehaviour, IClickable
     {
         float time = 0;
         float scaleModifier = 0;
-        while(time < smoothTime - 0.1f)
+        while(time < smoothTime)
         {
-            float t = time / smoothTime;
-            t = Mathf.Sin(t * Mathf.PI * 0.5f); 
-
-            scaleModifier = Mathf.Lerp(0, 1, t);
-            transform.localScale = new Vector2(1, 1 * scaleModifier);
+            float t = time/smoothTime;
+            scaleModifier = stretchCurveY.Evaluate(t);
+            transform.localScale = new Vector2(1 * stretchCurveX.Evaluate(t), 1 * scaleModifier);
 
             time += Time.deltaTime;
             yield return null;
@@ -59,18 +60,16 @@ public class PersonClick : MonoBehaviour, IClickable
     IEnumerator Compress()
     {
         float time = 0;
-        float scaleModifier = 1;
-        yield return new WaitForSeconds(0.5f);
         while (time < 0.2f)
         {
-            scaleModifier = Mathf.Lerp(1, 0, time / 0.2f);
-            transform.localScale = new Vector2(1, 1 * scaleModifier);
+            float t = time / 0.2f;
+            t = Mathf.Sin(t * Mathf.PI * 0.5f);
+            transform.rotation = Quaternion.Euler(0, 0, Mathf.Lerp(0, -110, t));
 
             time += Time.deltaTime;
             yield return null;
         }
-        transform.localScale = Vector2.right;
-        Destroy(gameObject);
+        transform.rotation = Quaternion.Euler(0, 0, -110);
     }
 
     private void OnEnable()
