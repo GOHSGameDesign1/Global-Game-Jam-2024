@@ -10,13 +10,19 @@ public class PersonClick : MonoBehaviour, IClickable
     SpriteRenderer spriteRenderer;
     public Sprite shotSprite;
 
+    bool canBeClicked;
+
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+
+        canBeClicked = false;
     }
     public void OnClick()
     {
         if (ByteManager.Instance.isPlaying) return;
+        if (!canBeClicked) return;
+        canBeClicked = false;
         AudioManager.instance.PlaySound("GunShot");
         if (AudioManager.instance.GetSound("GunShot") != null) ByteManager.Instance.Invoke("Play", AudioManager.instance.GetSound("GunShot").clip.length);
         Debug.Log("Clicked Triangle");
@@ -34,15 +40,20 @@ public class PersonClick : MonoBehaviour, IClickable
     {
         float time = 0;
         float scaleModifier = 0;
-        while(time < smoothTime)
+        while(time < smoothTime - 0.1f)
         {
-            scaleModifier = Mathf.Lerp(0, 1, time / smoothTime);
+            float t = time / smoothTime;
+            t = Mathf.Sin(t * Mathf.PI * 0.5f); 
+
+            scaleModifier = Mathf.Lerp(0, 1, t);
             transform.localScale = new Vector2(1, 1 * scaleModifier);
 
             time += Time.deltaTime;
             yield return null;
         }
         transform.localScale = Vector2.one;
+
+        canBeClicked = true;
     }
 
     IEnumerator Compress()
