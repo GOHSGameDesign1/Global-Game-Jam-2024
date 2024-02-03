@@ -28,6 +28,8 @@ public class AudioManager : MonoBehaviour
         {
             sound.source = gameObject.AddComponent<AudioSource>();
             sound.source.clip = sound.clip;
+
+            if (sound.playOnAwake) PlaySound(sound);
         }
     }
 
@@ -41,6 +43,11 @@ public class AudioManager : MonoBehaviour
     {
         Sound currentSound = Array.Find(sounds, s => s.name == soundName);
         currentSound?.source.Play();
+    }
+
+    void PlaySound(Sound sound)
+    {
+        sound?.source?.Play();
     }
 
     public Sound GetSound(string soundName)
