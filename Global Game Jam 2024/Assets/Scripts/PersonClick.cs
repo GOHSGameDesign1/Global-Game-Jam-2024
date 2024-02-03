@@ -15,6 +15,8 @@ public class PersonClick : MonoBehaviour, IClickable
     [SerializeField] private AnimationCurve stretchCurveX;
     [SerializeField] private AnimationCurve fallCurve;
 
+    [SerializeField] private ParticleSystem deathVFX;
+
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -70,6 +72,9 @@ public class PersonClick : MonoBehaviour, IClickable
             yield return null;
         }
         transform.rotation = Quaternion.Euler(0, 0, -110);
+
+        yield return new WaitForSeconds(0.7f);
+        Destroy(gameObject);
     }
 
     private void OnEnable()
@@ -80,5 +85,10 @@ public class PersonClick : MonoBehaviour, IClickable
     private void OnDisable()
     {
         ByteManager.manTrigger -= StretchUp;
+    }
+
+    private void OnDestroy()
+    {
+        Instantiate(deathVFX, new Vector2(transform.position.x + 1, transform.position.y), Quaternion.Euler(-90, 0, 0));
     }
 }
