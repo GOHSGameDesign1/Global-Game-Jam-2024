@@ -69,7 +69,7 @@ public class ByteManager : MonoBehaviour
 
         tmp.gameObject.SetActive(false);
 
-        if(index >= 0)
+        if (currentLine.triggerPersonEvent)
         {
             manTrigger?.Invoke();
         }
