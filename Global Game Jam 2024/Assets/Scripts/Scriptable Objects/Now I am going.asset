@@ -16,5 +16,6 @@ MonoBehaviour:
   text: "Now I am going to ask him to stand up. \nMr. Bradshaw will you stand up
     please "
   playNext: 0
+  triggerPersonEvent: 1
   startDelay: 0
   endDelay: 0

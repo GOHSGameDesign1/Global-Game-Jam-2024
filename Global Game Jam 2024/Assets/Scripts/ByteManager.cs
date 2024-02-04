@@ -76,6 +76,12 @@ public class ByteManager : MonoBehaviour
 
         index++;
 
+        if(index >= lines.Length)
+        {
+            GameManager.Instance.SwitchScene(2f);
+            yield break;
+        }
+
         if (currentLine.playNext)
         {
             Play();
@@ -85,10 +91,5 @@ public class ByteManager : MonoBehaviour
             isPlaying = false;
         }
 
-    }
-
-    void ToggleText()
-    {
-        tmp.gameObject.SetActive(!tmp.gameObject.activeSelf);
     }
 }
