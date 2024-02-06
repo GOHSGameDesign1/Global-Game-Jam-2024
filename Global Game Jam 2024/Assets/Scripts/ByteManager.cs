@@ -74,13 +74,13 @@ public class ByteManager : MonoBehaviour
             manTrigger?.Invoke();
         }
 
-        index++;
-
-        if(index >= lines.Length)
+        if (currentLine.triggerSceneSwitch)
         {
             GameManager.Instance.SwitchScene(2f);
             yield break;
         }
+
+        index++;
 
         if (currentLine.playNext)
         {
