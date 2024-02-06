@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0c5636592864494fb455d70629108f4, type: 3}
   m_Name: Mrs. Smegma
   m_EditorClassIdentifier: 
-  clip: {fileID: 0}
-  text: 
+  clip: {fileID: 8300000, guid: 120c10c2f95043d408b453d7ade41d94, type: 3}
+  text: 'Mrs. Smegma will you stand up please. '
   playNext: 0
-  triggerPersonEvent: 0
+  triggerPersonEvent: 1
   startDelay: 0
   endDelay: 0

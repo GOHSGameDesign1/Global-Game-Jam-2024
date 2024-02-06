@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0c5636592864494fb455d70629108f4, type: 3}
   m_Name: In This Picture
   m_EditorClassIdentifier: 
-  clip: {fileID: 0}
-  text: 
-  playNext: 0
+  clip: {fileID: 8300000, guid: c5c7dd51f5e819b4ab117a47e23d4afd, type: 3}
+  text: 'In this picture we cannot see Mrs. B.J. Smegma of 13, The Cresent, Belmont. '
+  playNext: 1
   triggerPersonEvent: 0
   startDelay: 0
   endDelay: 0
