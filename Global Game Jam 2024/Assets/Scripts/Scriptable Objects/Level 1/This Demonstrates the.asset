@@ -15,5 +15,7 @@ MonoBehaviour:
   clip: {fileID: 8300000, guid: 57d5858b22cf91344a8e82edc7950b3e, type: 3}
   text: 'This demonstrates the value of not being seen. '
   playNext: 0
+  triggerPersonEvent: 0
+  triggerSceneSwitch: 1
   startDelay: 0
   endDelay: 0
