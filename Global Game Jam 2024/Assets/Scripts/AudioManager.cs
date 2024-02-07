@@ -49,4 +49,12 @@ public class AudioManager : MonoBehaviour
     {
         return Array.Find(sounds, s => s.name == soundName);
     }
+
+    public void StopAllSounds() 
+    { 
+        foreach(Sound sound in sounds)
+        {
+            sound.source.Stop();
+        }    
+    }
 }

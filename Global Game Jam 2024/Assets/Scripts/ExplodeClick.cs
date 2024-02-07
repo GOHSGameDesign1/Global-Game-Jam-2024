@@ -10,6 +10,7 @@ public class ExplodeClick : MonoBehaviour, IClickable
 
     public bool playNext;
     public bool scream;
+    public bool scream2;
     public float lightIntensity;
     public float lightDuration;
     public AnimationCurve lightCurve;
@@ -24,6 +25,7 @@ public class ExplodeClick : MonoBehaviour, IClickable
     {
         if (ByteManager.Instance.isPlaying) return;
         if (scream) AudioManager.instance.PlaySound("ManScream");
+        if (scream2) AudioManager.instance.PlaySound("WomanScream");
         if ((AudioManager.instance.GetSound("Explode") != null) && (playNext)) ByteManager.Instance.Invoke("Play", AudioManager.instance.GetSound("Explode").clip.length);
         Explode();
     }
@@ -34,7 +36,7 @@ public class ExplodeClick : MonoBehaviour, IClickable
         Instantiate(explodeParticles2, transform.position, Quaternion.Euler(0, 0, 0));
 
         GetComponent<SpriteRenderer>().color = Color.clear;
-        GetComponent<CapsuleCollider2D>().enabled = false;
+        GetComponent<Collider2D>().enabled = false;
         StartCoroutine("startLight");
     }
 
