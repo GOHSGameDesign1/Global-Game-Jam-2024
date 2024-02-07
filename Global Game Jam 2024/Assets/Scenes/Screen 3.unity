@@ -235,6 +235,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Death Particles 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5590787405229405119, guid: 5ff9746934a292b41ba3aacdea98899e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ff9746934a292b41ba3aacdea98899e, type: 3}
 --- !u!1 &265642335
@@ -255,7 +259,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &265642336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5659,6 +5663,10 @@ PrefabInstance:
     - target: {fileID: 7535776977479139938, guid: 681647ab3a991254a968261948dd58b1, type: 3}
       propertyPath: m_Name
       value: Death Particle 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7535776977479139938, guid: 681647ab3a991254a968261948dd58b1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 681647ab3a991254a968261948dd58b1, type: 3}
