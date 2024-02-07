@@ -6,6 +6,45 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 743a4ea0f9283e4429333f188f6b921b
+  - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/Screen 2.unity
+    guid: 313adff0a5bde3e4d925e8522a8fd81f
+  - enabled: 1
+    path: Assets/Scenes/Screen 3.unity
+    guid: 744cd9b742dcbca4b9ae7b23695c1e08
+  - enabled: 1
+    path: Assets/Scenes/Screen 4.unity
+    guid: bd66bd6eca293b64aa4da8639f61cd80
+  - enabled: 1
+    path: Assets/Scenes/Screen 5.unity
+    guid: 437cf6c509c093a4ca9fa1fcca144494
+  - enabled: 1
+    path: Assets/Scenes/Screen 6.unity
+    guid: 00bfa6cf457a9df4eb2e475f888af8d0
+  - enabled: 1
+    path: Assets/Scenes/Screen 7.unity
+    guid: e9d19589536644744a28135547c852f0
+  - enabled: 1
+    path: Assets/Scenes/Screen 8.unity
+    guid: 1ab8b1989a32b974e9aa8e737579dc2f
+  - enabled: 1
+    path: Assets/Scenes/Screen 9.unity
+    guid: 2cb63b2bb3b06b2439803a181251a99c
+  - enabled: 1
+    path: Assets/Scenes/Screen 10.unity
+    guid: a10f6579c1b0f1143ad00c19a4e37575
+  - enabled: 1
+    path: Assets/Scenes/Screen 11.unity
+    guid: 04bfae300275ee54eb6f33f059d110b7
+  - enabled: 1
+    path: Assets/Scenes/Screen 12.unity
+    guid: 2fb89b5f98e38c145b32e997880c9660
+  - enabled: 1
+    path: Assets/Scenes/Fin.unity
+    guid: 497e3cda6b834f34d95e4c809a8a56a5
   m_configObjects: {}
