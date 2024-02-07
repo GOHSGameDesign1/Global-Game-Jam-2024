@@ -123,6 +123,23 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &27843371 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4277522913361451877, guid: b27dcecdc45d26b4ca8a5f3cf5e8cd1a, type: 3}
+  m_PrefabInstance: {fileID: 1461159010}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &27843377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 27843371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd0feb8308598804cbdf0f91dc23b6bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &85586728
 GameObject:
   m_ObjectHideFlags: 0
@@ -1017,6 +1034,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4277522913361451873, guid: b27dcecdc45d26b4ca8a5f3cf5e8cd1a, type: 3}
+      propertyPath: scream
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4277522913361451873, guid: b27dcecdc45d26b4ca8a5f3cf5e8cd1a, type: 3}
       propertyPath: playNext
       value: 1
       objectReference: {fileID: 0}
@@ -1119,6 +1140,10 @@ MonoBehaviour:
   - source: {fileID: 0}
     name: Explode
     clip: {fileID: 8300000, guid: b9f004df73889d245aa5d6fa703bc62e, type: 3}
+    playOnAwake: 0
+  - source: {fileID: 0}
+    name: ManScream
+    clip: {fileID: 8300000, guid: c01164fca694ca747be9af969adb175d, type: 3}
     playOnAwake: 0
 --- !u!4 &1895199287
 Transform:
