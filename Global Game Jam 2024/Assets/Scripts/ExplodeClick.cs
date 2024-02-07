@@ -1,11 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class ExplodeClick : MonoBehaviour, IClickable
 {
     public ParticleSystem explodeParticles1;
     public ParticleSystem explodeParticles2;
+
+    public float lightIntensity;
+    public float lightDuration;
+    public AnimationCurve lightCurve;
+    private Light2D explosionLight;
+
+    private void Awake()
+    {
+        explosionLight = GetComponent<Light2D>();
+    }
 
     public void OnClick()
     {
@@ -20,5 +31,18 @@ public class ExplodeClick : MonoBehaviour, IClickable
         Instantiate(explodeParticles2, transform.position, Quaternion.Euler(0, 0, 0));
 
         GetComponent<SpriteRenderer>().color = Color.clear;
+        StartCoroutine("startLight");
+    }
+
+    IEnumerator startLight()
+    {
+        float time = 0;
+        while (time < lightDuration)
+        {
+            float t = time / lightDuration;
+            explosionLight.intensity = lightIntensity * lightCurve.Evaluate(t);
+            time += Time.deltaTime;
+            yield return null;
+        }
     }
 }
