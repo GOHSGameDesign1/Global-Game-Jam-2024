@@ -53,18 +53,23 @@ public class ByteManager : MonoBehaviour
 
     IEnumerator PlayLine()
     {
-        isPlaying = true;
         SoundByte currentLine = lines[index];
-        source.clip = currentLine.clip;
+        source.clip = currentLine?.clip;
         tmp.text = currentLine.text;
-        tmp.gameObject.SetActive(true);
 
-        float time = 0; 
-        source.Play();
-        while(time < source.clip.length)
+        yield return new WaitForSeconds(currentLine.startDelay);
+        tmp.gameObject.SetActive(true);
+        isPlaying = true;
+
+        if (source.clip != null)
         {
-            time += Time.deltaTime;
-            yield return null;
+            float time = 0;
+            source.Play();
+            while (time < source.clip.length)
+            {
+                time += Time.deltaTime;
+                yield return null;
+            }
         }
 
         tmp.gameObject.SetActive(false);
@@ -74,13 +79,13 @@ public class ByteManager : MonoBehaviour
             manTrigger?.Invoke();
         }
 
-        index++;
-
-        if(index >= lines.Length)
+        if (currentLine.triggerSceneSwitch)
         {
             GameManager.Instance.SwitchScene(2f);
             yield break;
         }
+
+        index++;
 
         if (currentLine.playNext)
         {

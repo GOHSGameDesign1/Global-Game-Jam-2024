@@ -842,6 +842,10 @@ MonoBehaviour:
     name: Forest
     clip: {fileID: 8300000, guid: 4e9e7fe6a5bc86846a7b16a159030794, type: 3}
     playOnAwake: 1
+  - source: {fileID: 0}
+    name: Explode
+    clip: {fileID: 8300000, guid: b9f004df73889d245aa5d6fa703bc62e, type: 3}
+    playOnAwake: 0
 --- !u!4 &701772994
 Transform:
   m_ObjectHideFlags: 0
@@ -1297,6 +1301,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   smoothTime: 0.3
   shotSprite: {fileID: 21300000, guid: 3e92f85e57979374cb3f6ef6734d984b, type: 3}
+  fallRotation: -110
   stretchCurveY:
     serializedVersion: 2
     m_Curve:
@@ -1540,8 +1545,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: " In this picture we cannot see Mrs. B.J. Smegma of 13, The Cresent, Belmont.
-    \n"
+  m_text: This is Mr. Nesbitt of Harlow New Town. Mr. Nesbit would you stand up please.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

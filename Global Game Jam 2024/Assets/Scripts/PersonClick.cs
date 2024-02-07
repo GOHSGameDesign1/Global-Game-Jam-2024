@@ -11,6 +11,7 @@ public class PersonClick : MonoBehaviour, IClickable
 
     bool canBeClicked;
 
+    public float fallRotation;
     [SerializeField] private AnimationCurve stretchCurveY;
     [SerializeField] private AnimationCurve stretchCurveX;
     [SerializeField] private AnimationCurve fallCurve;
@@ -32,7 +33,6 @@ public class PersonClick : MonoBehaviour, IClickable
         AudioManager.instance.PlaySound("GunShot");
         Instantiate(shotVFX, new Vector2(transform.position.x, transform.position.y + 1.2f), Quaternion.Euler(-90, 0 ,0 ));
         if (AudioManager.instance.GetSound("GunShot") != null) ByteManager.Instance.Invoke("Play", AudioManager.instance.GetSound("GunShot").clip.length);
-        Debug.Log("Clicked Triangle");
         spriteRenderer.sprite = shotSprite;
         StartCoroutine(Compress());
     }
@@ -68,12 +68,12 @@ public class PersonClick : MonoBehaviour, IClickable
         {
             float t = time / 0.2f;
             // t = Mathf.Sin(t * Mathf.PI * 0.5f);
-            transform.rotation = Quaternion.Euler(0, 0, -110 * fallCurve.Evaluate(t));
+            transform.rotation = Quaternion.Euler(0, 0, fallRotation * fallCurve.Evaluate(t));
 
             time += Time.deltaTime;
             yield return null;
         }
-        transform.rotation = Quaternion.Euler(0, 0, -110);
+        transform.rotation = Quaternion.Euler(0, 0, fallRotation);
 
         yield return new WaitForSeconds(1f);
         Destroy(gameObject);

@@ -14,6 +14,7 @@ public class AudioManager : MonoBehaviour
         if(instance == null)
         {
             instance = this;
+            DontDestroyOnLoad(gameObject);
         } else
         {
             Debug.LogWarning("Two Instances Detected!");
@@ -31,12 +32,6 @@ public class AudioManager : MonoBehaviour
 
             if (sound.playOnAwake) PlaySound(sound);
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void PlaySound(string soundName)

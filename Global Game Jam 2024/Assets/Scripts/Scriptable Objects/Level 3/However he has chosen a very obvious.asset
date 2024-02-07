@@ -10,10 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c0c5636592864494fb455d70629108f4, type: 3}
-  m_Name: This Demonstrates the
+  m_Name: However he has chosen a very obvious
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: 57d5858b22cf91344a8e82edc7950b3e, type: 3}
-  text: 'This demonstrates the value of not being seen. '
+  clip: {fileID: 8300000, guid: adf72539d63052b4ab15b51c5215a4cc, type: 3}
+  text: 'However he has chosen a very obvious piece of cover. '
   playNext: 0
+  triggerPersonEvent: 0
+  triggerSceneSwitch: 0
   startDelay: 0
   endDelay: 0
