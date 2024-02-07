@@ -35,13 +35,13 @@ public class GameManager : MonoBehaviour
             return;
         }
 
-        if(SceneManager.GetActiveScene().buildIndex + 1 == 5)
+        if(SceneManager.GetActiveScene().buildIndex + 1 == 6)
         {
             AudioManager.instance.StopAllSounds();
             AudioManager.instance.PlaySound("Ocean");
         }
 
-        if (SceneManager.GetActiveScene().buildIndex + 1 == 6)
+        if (SceneManager.GetActiveScene().buildIndex + 1 == 7)
         {
             AudioManager.instance.StopAllSounds();
             AudioManager.instance.PlaySound("Forest");
