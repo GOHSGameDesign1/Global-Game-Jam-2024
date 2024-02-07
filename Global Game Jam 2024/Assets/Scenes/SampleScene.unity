@@ -1297,6 +1297,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   smoothTime: 0.3
   shotSprite: {fileID: 21300000, guid: 3e92f85e57979374cb3f6ef6734d984b, type: 3}
+  fallRotation: -110
   stretchCurveY:
     serializedVersion: 2
     m_Curve:
