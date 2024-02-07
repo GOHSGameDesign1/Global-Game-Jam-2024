@@ -256,6 +256,10 @@ MonoBehaviour:
   - source: {fileID: 0}
     name: Ocean
     clip: {fileID: 8300000, guid: 2044656ce3776b840a298fe9435c2993, type: 3}
+    playOnAwake: 1
+  - source: {fileID: 0}
+    name: WomanScream
+    clip: {fileID: 8300000, guid: 8518aa08e66a4eb489369837dbe001a2, type: 3}
     playOnAwake: 0
 --- !u!4 &681744435
 Transform:
@@ -439,6 +443,7 @@ MonoBehaviour:
   explodeParticles2: {fileID: 7275547177634219122, guid: 681647ab3a991254a968261948dd58b1, type: 3}
   playNext: 1
   scream: 0
+  scream2: 0
   lightIntensity: 1.2
   lightDuration: 7
   lightCurve:
