@@ -35,6 +35,18 @@ public class GameManager : MonoBehaviour
             return;
         }
 
+        if(SceneManager.GetActiveScene().buildIndex + 1 == 5)
+        {
+            AudioManager.instance.StopAllSounds();
+            AudioManager.instance.PlaySound("Ocean");
+        }
+
+        if (SceneManager.GetActiveScene().buildIndex + 1 == 6)
+        {
+            AudioManager.instance.StopAllSounds();
+            AudioManager.instance.PlaySound("Forest");
+        }
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
