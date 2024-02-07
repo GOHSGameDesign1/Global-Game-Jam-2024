@@ -5957,6 +5957,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4277522913361451873, guid: b27dcecdc45d26b4ca8a5f3cf5e8cd1a, type: 3}
+      propertyPath: playNext
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4277522913361451877, guid: b27dcecdc45d26b4ca8a5f3cf5e8cd1a, type: 3}
       propertyPath: m_Name
       value: Bush
