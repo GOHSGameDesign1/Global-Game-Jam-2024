@@ -56,6 +56,8 @@ public class ByteManager : MonoBehaviour
         SoundByte currentLine = lines[index];
         source.clip = currentLine?.clip;
         tmp.text = currentLine.text;
+
+        yield return new WaitForSeconds(currentLine.startDelay);
         tmp.gameObject.SetActive(true);
         isPlaying = true;
 
