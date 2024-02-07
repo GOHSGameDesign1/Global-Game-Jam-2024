@@ -17,5 +17,6 @@ MonoBehaviour:
     please "
   playNext: 0
   triggerPersonEvent: 1
-  startDelay: 0
+  triggerSceneSwitch: 0
+  startDelay: 0.48
   endDelay: 0
