@@ -1149,6 +1149,10 @@ MonoBehaviour:
     name: Ocean
     clip: {fileID: 8300000, guid: 2044656ce3776b840a298fe9435c2993, type: 3}
     playOnAwake: 0
+  - source: {fileID: 0}
+    name: WomanScream
+    clip: {fileID: 8300000, guid: 8518aa08e66a4eb489369837dbe001a2, type: 3}
+    playOnAwake: 0
 --- !u!4 &1895199287
 Transform:
   m_ObjectHideFlags: 0
