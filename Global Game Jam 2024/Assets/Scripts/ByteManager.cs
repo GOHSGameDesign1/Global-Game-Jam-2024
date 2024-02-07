@@ -53,18 +53,21 @@ public class ByteManager : MonoBehaviour
 
     IEnumerator PlayLine()
     {
-        isPlaying = true;
         SoundByte currentLine = lines[index];
-        source.clip = currentLine.clip;
+        source.clip = currentLine?.clip;
         tmp.text = currentLine.text;
         tmp.gameObject.SetActive(true);
+        isPlaying = true;
 
-        float time = 0; 
-        source.Play();
-        while(time < source.clip.length)
+        if (source.clip != null)
         {
-            time += Time.deltaTime;
-            yield return null;
+            float time = 0;
+            source.Play();
+            while (time < source.clip.length)
+            {
+                time += Time.deltaTime;
+                yield return null;
+            }
         }
 
         tmp.gameObject.SetActive(false);

@@ -873,6 +873,7 @@ MonoBehaviour:
   lines:
   - {fileID: 11400000, guid: 65995c245e50d0b4fa50a53bc8460cfe, type: 2}
   - {fileID: 11400000, guid: 4338c2ed9c325404a80883192c206049, type: 2}
+  - {fileID: 11400000, guid: c80da07ed8749c247b98fde527b4673b, type: 2}
   index: 0
 --- !u!4 &467333300
 Transform:
